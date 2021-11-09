@@ -3,13 +3,17 @@ package com.mark.stylish.kotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+import com.mark.stylish.kotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var toolbar: Toolbar
+    // Derived from the name of layout file.
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main) // Replace setContentView
 
         setToolbar()
     }
@@ -25,8 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     fun setToolbar() {
-        toolbar = findViewById(R.id.toolbar)
-        toolbar.setPadding(0, statusBarHeight, 0, 0)
+        binding.toolbar.setPadding(0, statusBarHeight, 0, 0)
     }
 
 
