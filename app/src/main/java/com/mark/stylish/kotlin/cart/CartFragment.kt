@@ -6,13 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.mark.stylish.kotlin.R
+import com.mark.stylish.kotlin.databinding.CartFragmentBinding
+import com.mark.stylish.kotlin.databinding.ProfileFragmentBinding
 
 class CartFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = CartFragment()
-    }
 
     private lateinit var viewModel: CartViewModel
 
@@ -20,7 +19,9 @@ class CartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.cart_fragment, container, false)
+//        val binding = DataBindingUtil.inflate<CartFragmentBinding>(inflater, R.layout.cart_fragment, container, false)
+        val binding = CartFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
