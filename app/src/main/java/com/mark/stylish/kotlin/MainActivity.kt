@@ -38,22 +38,23 @@ class MainActivity : AppCompatActivity() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener{ item ->
         when(item.itemId) {
             R.id.bottom_navigation_home -> {
-                findNavController(R.id.myNavHostFragment).navigate(R.id.homeFragment)
+                // use safe-args navigation
+                findNavController(R.id.myNavHostFragment).navigate(NavigationDirections.actionGlobalHomeFragment())
                 toolbarLogoVisible()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.bottom_navigation_catalog -> {
-                findNavController(R.id.myNavHostFragment).navigate(R.id.catalogFragment)
+                findNavController(R.id.myNavHostFragment).navigate(NavigationDirections.actionGlobalCatalogFragment())
                 toolbarTitleVisible("型錄")
                 return@OnNavigationItemSelectedListener true
             }
             R.id.bottom_navigation_cart -> {
-                findNavController(R.id.myNavHostFragment).navigate(R.id.cartFragment)
+                findNavController(R.id.myNavHostFragment).navigate(NavigationDirections.actionGlobalCartFragment())
                 toolbarTitleVisible("購物車")
                 return@OnNavigationItemSelectedListener true
             }
             R.id.bottom_navigation_profile -> {
-                findNavController(R.id.myNavHostFragment).navigate(R.id.profileFragment)
+                findNavController(R.id.myNavHostFragment).navigate(NavigationDirections.actionGlobalProfileFragment())
                 toolbarTitleVisible("個人")
                 return@OnNavigationItemSelectedListener true
             }
