@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -19,5 +20,25 @@
         android:id="@+id/profileFragment"
         android:name="com.mark.stylish.kotlin.profile.ProfileFragment"
         android:label="ProfileFragment" />
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_catalogFragment"
+        app:destination="@id/catalogFragment"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_cartFragment"
+        app:destination="@id/cartFragment"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="true" />
 
 </navigation>
