@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_style_black_3f3a3a">
+        <item name="android:ellipsize">end</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black_3f3a3a</item>
+    </style>
+</resources>
