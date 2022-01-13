@@ -1,7 +1,12 @@
 package com.mark.stylish.kotlin.home
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
+
+    init {
+        Log.d("Mark", "HomeViewModel Init")
+    }
 }

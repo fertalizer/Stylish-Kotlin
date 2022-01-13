@@ -21,9 +21,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main) // Replace setContentView
+        binding.lifecycleOwner = this
 
         viewModelFactory = ViewModelFactory()
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+
 
         setupToolbar()
         setupBottomNavigation()
