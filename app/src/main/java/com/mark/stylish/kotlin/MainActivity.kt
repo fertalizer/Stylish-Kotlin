@@ -5,18 +5,26 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mark.stylish.kotlin.databinding.ActivityMainBinding
+import com.mark.stylish.kotlin.factory.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     // Derived from the name of layout file.
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModelFactory: ViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main) // Replace setContentView
+
+        viewModelFactory = ViewModelFactory()
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+
         setupToolbar()
         setupBottomNavigation()
     }
